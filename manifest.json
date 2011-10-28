@@ -2,11 +2,14 @@
   "name": "My First Extension",
   "version": "1.0",
   "description": "The first extension that I made.",
-  "browser_action": {
+  "background_page": "background.html",
+  "page_action": {
     "default_icon": "favicon.ico",
+    "default_title": "Search Github repo",
     "popup": "popup.html"
   },
   "permissions": [
+    "tabs",
     "http://api.flickr.com/"
   ]
 }
