@@ -8,6 +8,13 @@
     "default_title": "Search Github repo",
     "popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*/*"],
+      "exclude_globs": ["*github.com/*/"],
+      "js": ["jquery-1.6.4.min.js", "content-keydown.js"]
+    }
+  ],
   "permissions": [
     "tabs",
     "http://api.flickr.com/"
