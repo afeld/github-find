@@ -55,3 +55,11 @@ $(window).keydown(function(e){
     hideSearchBox();
   }
 });
+
+chrome.extension.onRequest.addListener(function(request) {
+  switch (request.action){
+    case 'toggleSearchBox':
+      searchBoxVisible ? hideSearchBox() : showSearchBox();
+      break;
+  }
+});

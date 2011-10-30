@@ -9,4 +9,11 @@ function checkForValidUrl(tabId, changeInfo, tab) {
   }
 };
 
+function onClick(tab){
+  chrome.tabs.getSelected(null, function(tab) {
+    chrome.tabs.sendRequest(tab.id, {action: 'toggleSearchBox'});
+  });
+}
+
 chrome.tabs.onUpdated.addListener(checkForValidUrl);
+chrome.pageAction.onClicked.addListener(onClick);
