@@ -11,6 +11,12 @@ function onSearchKeydown(e){
   }
 }
 
+function hideSearchBox(){
+  $searchBox.hide();
+  searchBoxVisible = false;
+}
+
+
 $(window).keydown(function(e){
   if (!searchBoxVisible && e.which === 70){ // the 'f' key
     // show the search box
@@ -18,8 +24,9 @@ $(window).keydown(function(e){
     if (!$searchBox){
       // create the input field
       $searchBox = $('<input type="text" style="position:fixed; font-size:3em;"/>')
+        .appendTo('body')
         .keydown(onSearchKeydown)
-        .appendTo('body');
+        .blur(hideSearchBox);
     }
     
     $searchBox
@@ -36,7 +43,6 @@ $(window).keydown(function(e){
     e.preventDefault();
     
   } else if (searchBoxVisible && e.which === 27){ // the ESC key
-    $searchBox.hide();
-    searchBoxVisible = false;
+    hideSearchBox();
   }
 });
