@@ -1,4 +1,4 @@
-var REPO_REGEX = new RegExp("github\.com/[^/]+/[^/]+");
+var REPO_REGEX = new RegExp("://github\.com/[^/]+/.+");
 
 // Called when the url of a tab changes.
 function checkForValidUrl(tabId, changeInfo, tab) {

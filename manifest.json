@@ -1,7 +1,7 @@
 {
-  "name": "My First Extension",
-  "version": "1.0",
-  "description": "The first extension that I made.",
+  "name": "github-find",
+  "version": "1.0.0",
+  "description": "A plugin for searching within Github repos.",
   "background_page": "background.html",
   "page_action": {
     "default_icon": "favicon.ico",
