@@ -5,8 +5,7 @@
   "background_page": "background.html",
   "page_action": {
     "default_icon": "favicon.ico",
-    "default_title": "Search Github repo",
-    "popup": "popup.html"
+    "default_title": "Press CTL-SHIFT-F to search this repo."
   },
   "content_scripts": [
     {
@@ -15,8 +14,5 @@
       "js": ["jquery-1.6.4.min.js", "jquery-ui-1.8.16.position.min.js", "content-keydown.js"]
     }
   ],
-  "permissions": [
-    "tabs",
-    "http://api.flickr.com/"
-  ]
+  "permissions": ["tabs"]
 }
