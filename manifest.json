@@ -2,6 +2,7 @@
   "name": "github-find",
   "version": "1.0.0",
   "description": "A plugin for searching within Github repos.",
+  "homepage_url": "https://github.com/afeld/github-find",
   "background_page": "background.html",
   "page_action": {
     "default_icon": "favicon.ico",
