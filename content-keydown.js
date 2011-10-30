@@ -1,5 +1,5 @@
 var searchBoxVisible = false,
-  $searchBox;
+  $searchBox, $input;
 
 function onSearchKeydown(e){
   if (e.which === 13){ // the ENTER key
@@ -23,10 +23,13 @@ $(window).keydown(function(e){
     
     if (!$searchBox){
       // create the input field
-      $searchBox = $('<input type="text" style="position:fixed; font-size:3em;"/>')
-        .appendTo('body')
-        .keydown(onSearchKeydown)
-        .blur(hideSearchBox);
+      $searchBox = $('<div style="background-color:#E4E8EC; border: 1px solid #999;  border-radius:10px; box-shadow: 5px 8px 10px #999; padding:15px; position:fixed;"><input type="text" style="font-size:3em;"/></div>');
+      
+      $searchBox.appendTo('body');
+      
+      $input = $searchBox.find('input')
+        .blur(hideSearchBox)
+        .keydown(onSearchKeydown);
     }
     
     $searchBox
@@ -35,8 +38,9 @@ $(window).keydown(function(e){
         my: 'center',
         at: 'center',
         of: window
-      })
-      .focus();
+      });
+    
+    $input.focus();
     
     searchBoxVisible = true;
     // don't register the 'f' keydown
