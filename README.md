@@ -4,7 +4,9 @@ A Chrome extension for searching within Github repos.
 
 This extension adds two simple features to github:
 
-On public repos, you get the "Search source code..." box that already exists on private repos. Also, this binds '/' to highlight the repo search box for both public and private repos.
+On public repos, you get the "Search source code..." box that already exists on private repos.
+
+'/' is bound as a keyboard shortcut to highlight the repo search box for both public and private repos.
 
 ## Bugs
 
