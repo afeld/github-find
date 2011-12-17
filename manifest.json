@@ -1,6 +1,6 @@
 {
   "name": "github-repo-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A plugin for searching within Github repos.",
   "homepage_url": "https://github.com/kaytwo/github-repo-search",
   "background_page": "background.html",
