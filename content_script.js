@@ -3,11 +3,10 @@
  *  (/)?      project code home page
  *  (/tree.*) project code subdirectories
  *  (/blob.*) project code source files
- *  (/edit.*) project code edit windows
  *  first matching group ([^/]+/[^/]+) is added as repo=match[1] to the search query variables
  */
  
-var REPO_REGEX = new RegExp("://github\.com/([^/]+/[^/]+)((/)|(/tree/.*)|(/blob/.*)|(/edit/.*))?$");
+var REPO_REGEX = new RegExp("://github\.com/([^/]+/[^/]+)((/)|(/tree/.*)|(/blob/.*))?$");
 
 match = document.location.href.match(REPO_REGEX);
 if (match){
