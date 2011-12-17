@@ -1,19 +1,14 @@
 {
-  "name": "github-find",
-  "version": "1.0.0",
+  "name": "github-repo-search",
+  "version": "1.0.1",
   "description": "A plugin for searching within Github repos.",
-  "homepage_url": "https://github.com/afeld/github-find",
+  "homepage_url": "https://github.com/kaytwo/github-find",
   "background_page": "background.html",
-  "page_action": {
-    "default_icon": "favicon.ico",
-    "default_title": "Press CTL-SHIFT-F to search this repo."
-  },
   "content_scripts": [
     {
       "matches": ["*://github.com/*/*"],
-      "exclude_globs": ["*github.com/*/"],
-      "js": ["jquery-1.6.4.min.js", "jquery-ui-1.8.16.position.min.js", "content-keydown.js"]
+      "js": ["jquery-1.7.1.min.js", "content_script.js"]
     }
   ],
-  "permissions": ["tabs"]
+  "permissions": ["tabs","https://github.com/*"]
 }
