@@ -2,11 +2,11 @@
   "name": "github-repo-search",
   "version": "1.0.1",
   "description": "A plugin for searching within Github repos.",
-  "homepage_url": "https://github.com/kaytwo/github-find",
+  "homepage_url": "https://github.com/kaytwo/github-repo-search",
   "background_page": "background.html",
   "content_scripts": [
     {
-      "matches": ["*://github.com/*/*"],
+      "matches": ["https://github.com/*/*"],
       "js": ["jquery-1.7.1.min.js", "content_script.js"]
     }
   ],
