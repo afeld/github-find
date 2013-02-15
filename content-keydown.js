@@ -7,7 +7,7 @@ function onSearchKeypress(e){
       repo = window.location.href.match(REPO_REGEX)[1],
       query = $(this).val();
     
-    window.location = 'https://github.com/search?type=Code&q=' + encodeURIComponent(query) + '&repo=' + encodeURIComponent(repo);
+    window.location = 'https://github.com/search?type=Code&q=' + encodeURIComponent(query) + '+repo%3A' + encodeURIComponent(repo);
   }
 }
 
