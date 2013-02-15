@@ -1,10 +1,10 @@
 {
-  "name": "GitHub Repo Search",
+  "name": "github-find",
   "version": "1.0.1",
   "manifest_version": 2,
   "icons": { "16": "favicon.ico" },
-  "description": "An extension for searching within GitHub repositories.",
-  "homepage_url": "https://github.com/vectorious/github-find",
+  "description": "A plugin for searcing within Github repos.",
+  "homepage_url": "https://github.com/afeld/github-find",
   "background": {
 	"scripts": ["jquery-1.9.1.min.js", "background.js"],
 	"persistent": false	
