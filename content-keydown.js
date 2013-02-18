@@ -6,8 +6,14 @@ function onSearchKeypress(e){
     var REPO_REGEX = new RegExp("github\\.com/([^/]+/[^/]+)(/.*)?$"),
       repo = window.location.href.match(REPO_REGEX)[1],
       query = $(this).val();
-    
-    window.location = 'https://github.com/search?type=Code&q=' + encodeURIComponent(query) + '+repo%3A' + encodeURIComponent(repo);
+
+    if ($('body').hasClass('vis-private') || $('.repo-search').length > 0){
+      // private search (which allows direct search within repo)
+      window.location = 'http://github.com/' + repo + '/search?q=' + encodeURIComponent(query);
+    } else {
+      // public search
+      window.location = 'https://github.com/search?type=Code&q=' + encodeURIComponent(query) + '+repo%3A' + encodeURIComponent(repo);
+    }
   }
 }
 
@@ -17,14 +23,14 @@ function showSearchBox(){
   if (!$searchBox){
     // create the input field
     $searchBox = $('<div style="background-color:#E4E8EC; border: 1px solid #999;  border-radius:10px; box-shadow: 5px 8px 10px #999; padding:15px; position:fixed;"><input type="text" style="font-size:3em;"/></div>');
-    
     $searchBox.appendTo('body');
-    
-    $input = $searchBox.find('input')
+
+    $input = $searchBox.find('input');
+    $input
       .blur(hideSearchBox)
       .keypress(onSearchKeypress);
   }
-  
+
   $searchBox
     .show()
     .position({
@@ -32,9 +38,9 @@ function showSearchBox(){
       at: 'center',
       of: window
     });
-  
+
   $input.focus();
-  
+
   searchBoxVisible = true;
 }
 
