@@ -3,7 +3,7 @@ var searchBoxVisible = false,
 
 function onSearchKeypress(e){
   if (e.which === 13){ // the ENTER key
-    var REPO_REGEX = new RegExp("github\.com/([^/]+/[^/]+)(/.*)?$"),
+    var REPO_REGEX = new RegExp("github\\.com/([^/]+/[^/]+)(/.*)?$"),
       repo = window.location.href.match(REPO_REGEX)[1],
       query = $(this).val();
     
@@ -56,10 +56,12 @@ $(window).keydown(function(e){
   }
 });
 
-chrome.extension.onRequest.addListener(function(request) {
-  switch (request.action){
-    case 'toggleSearchBox':
-      searchBoxVisible ? hideSearchBox() : showSearchBox();
-      break;
+chrome.extension.onMessage.addListener(function(request){
+  if (request.action === 'toggleSearchBox'){
+    if (searchBoxVisible){
+      hideSearchBox();
+    } else {
+      showSearchBox();
+    }
   }
 });
